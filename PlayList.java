@@ -12,23 +12,6 @@ class PlayList {
         size = 0;
     }
 
-    public static void main(String[] args) {
-        Track tr2 = new Track("Fix You", "Coldplay", 3);
-        Track tr1 = new Track("Satlot", "Shreck", 1);
-        Track tr3 = new Track("Sweet Child o' mine", "Guns n' Rose's", 4);
-        Track tr4 = new Track("parado no bailao", "$%$&#$", 2);
-        PlayList myList = new PlayList(10);
-        myList.add(tr1);
-        myList.add(tr2);
-        myList.add(tr3);
-        myList.add(tr4);
-        System.out.println(myList);
-        myList.add(myList);
-        myList.sortedInPlace();
-        //System.out.println(myList.minIndex(1));
-        System.out.println(myList);
-    }
-
 
     /** Returns the maximum size of this play list. */ 
     public int getMaxSize() {
@@ -184,14 +167,9 @@ class PlayList {
         int minIndex1;
         for(int i=0 ; i<size ; i++) {
             minIndex1 = minIndex(i);
-            System.out.println(minIndex1);
             temp = tracks[i];
-            //System.out.println(temp);
-            //System.out.println(tracks[i]);
             tracks[i]=tracks[minIndex1];
-            //System.out.println(minIndex(i));
             tracks[minIndex1] = temp;
-            System.out.println(i + "   " + this + "\n");
         }
     }
 }
